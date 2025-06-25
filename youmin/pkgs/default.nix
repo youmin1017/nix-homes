@@ -21,9 +21,9 @@
     # JSON utils
     jq # A lightweight and flexible command-line JSON processor
     jless
-    openssl
-    mkcert
-    openldap
+    # openssl
+    # mkcert
+    # openldap
 
     # misc
     onefetch # Git repository summary generator
@@ -38,29 +38,29 @@
     # lsp
     helm-ls
     lua-language-server
-    marksman
+    # marksman
     nil
     # formatter
-    kdlfmt
+    # kdlfmt
     nixfmt-rfc-style
     stylua
     # linter
-    hadolint # Dockerfile linter
+    # hadolint # Dockerfile linter
 
     # languages
-    go
-    go-migrate
-    nodejs_22
-    pnpm
-    deno
-    python312
-    rust-bin.stable.latest.default
-    rust-analyzer
+    # go
+    # go-migrate
+    # nodejs_22
+    # pnpm
+    # deno
+    # python312
+    # rust-bin.stable.latest.default
+    # rust-analyzer
 
     # DevOps
-    kubectl
-    k9s
-    kubernetes-helm
+    # kubectl
+    # k9s
+    # kubernetes-helm
   ];
 
   programs = {
