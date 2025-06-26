@@ -50,7 +50,7 @@
     # languages
     # go
     # go-migrate
-    # nodejs_22
+    nodejs_22
     # pnpm
     # deno
     # python312
