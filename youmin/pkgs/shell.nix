@@ -1,6 +1,5 @@
 {
   lib,
-  config,
   isDarwin,
   ...
 }:
@@ -48,8 +47,7 @@
     k = "kubectl";
     cz = "chezmoi";
     lg = "lazygit";
-    rm = "trash";
-    # rm = lib.mkIf (isDarwin) "trash";
+    rm = if (isDarwin) then "trash" else "gtrash";
     ii = lib.mkIf (isDarwin) "open -a Finder.app";
     zed = lib.mkIf (!isDarwin) "zeditor";
 
