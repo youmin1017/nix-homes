@@ -20,6 +20,18 @@
           eval "$(fzf --zsh)"
         }
       '')
+      # Custom functions
+      (lib.mkOrder 600 ''
+        function nix-hash-from-url() {
+          if [ -z "$1" ]; then
+            echo "Usage: hash_sha256_from_url <url>"
+            return 1
+          fi
+          local url="$1"
+          local hashed=$(nix-hash --flat --base64 --type sha256 <(curl -sS -o - "$url"))
+          echo "sha256-$hashed"
+        }
+      '')
       (lib.mkOrder 1200 ''
         export PATH="$HOME/bin:$HOME/.local/bin:$HOME/go/bin:$PATH"
         export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
