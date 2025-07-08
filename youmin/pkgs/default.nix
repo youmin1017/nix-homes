@@ -23,7 +23,7 @@
     jless
     openssl
     mkcert
-    openldap
+    # openldap
 
     # misc
     onefetch # Git repository summary generator
@@ -56,6 +56,7 @@
     python312
     rust-bin.stable.latest.default
     rust-analyzer
+    zulu
 
     # DevOps
     kubectl
