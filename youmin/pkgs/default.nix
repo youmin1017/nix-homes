@@ -62,6 +62,9 @@
     kubectl
     k9s
     kubernetes-helm
+
+    # AI
+    gemini-cli
   ];
 
   programs = {
