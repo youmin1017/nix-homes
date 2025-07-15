@@ -22,6 +22,7 @@
     jless
     openssl
     mkcert
+    gh
 
     # misc
     onefetch # Git repository summary generator

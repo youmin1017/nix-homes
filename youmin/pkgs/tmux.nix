@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   programs.tmux = {
-    enable = false;
+    enable = true;
 
     terminal = "xterm-ghostty";
 
@@ -21,15 +21,6 @@
           set -g @rose_pine_default_window_behavior 'on' # Forces tmux default window list behaviour
           set -g @rose_pine_show_current_program 'on' # Forces tmux to show the current running program as window name
           set -g @rose_pine_show_pane_directory 'on' # Forces tmux to show the current directory as window name
-        '';
-      }
-      {
-        plugin = tmuxPlugins.tmux-floax;
-        extraConfig = ''
-          set -g @floax-bind '-n M-p'
-          set -g @floax-bind-menu 'P'
-          set -g @floax-width '90%'
-          set -g @floax-height '90%'
         '';
       }
     ];

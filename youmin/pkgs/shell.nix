@@ -28,8 +28,7 @@
     ];
 
     autocd = true;
-
-    enableCompletion = false;
+    enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
