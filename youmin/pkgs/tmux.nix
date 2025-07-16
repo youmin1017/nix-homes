@@ -4,6 +4,7 @@
     enable = true;
 
     terminal = "xterm-ghostty";
+    baseIndex = 1; # Start pane and window indices at 1 instead of 0
 
     plugins = with pkgs; [
       {
@@ -27,6 +28,21 @@
 
     extraConfig = ''
       set -g mouse on 
+
+      # pane navigation
+      bind -r h select-pane -L  # move left
+      bind -r j select-pane -D  # move down
+      bind -r k select-pane -U  # move up
+      bind -r l select-pane -R  # move right
+
+      # window navigation
+      unbind n
+      unbind p
+      bind -r C-h previous-window                             # select previous window
+      bind -r C-l next-window                                 # select next window
+      bind -r C-S-H swap-window -t -1 \; select-window -t -1  # swap current window with the previous one
+      bind -r C-S-L swap-window -t +1 \; select-window -t +1  # swap current window with the next one
+      bind Tab last-window                                    # move to last active window
     '';
   };
 }

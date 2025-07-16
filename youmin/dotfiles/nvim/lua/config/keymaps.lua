@@ -38,7 +38,7 @@ map("t", "<C-x>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
 map({ "n", "t" }, "<M-i>", function()
   Snacks.terminal(nil, {
     win = {
-      border = "single",
+      border = "rounded",
       position = "float",
     },
   })
@@ -50,6 +50,14 @@ map({ "n", "t" }, "<M-h>", function()
     },
   })
 end, { desc = "Snacks bottom terminal" })
+map({ "n", "t" }, "<M-u>", function()
+  Snacks.terminal("gemini", {
+    win = {
+      border = "rounded",
+      position = "float",
+    },
+  })
+end, { desc = "Snacks Gemini CLI" })
 
 -- Other
 -- stylua: ignore
