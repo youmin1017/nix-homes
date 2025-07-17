@@ -24,6 +24,8 @@
           set -g @rose_pine_show_pane_directory 'on' # Forces tmux to show the current directory as window name
         '';
       }
+      # session
+      tmuxPlugins.resurrect
     ];
 
     extraConfig = ''
