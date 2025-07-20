@@ -5,6 +5,7 @@
 
     terminal = "xterm-ghostty";
     baseIndex = 1; # Start pane and window indices at 1 instead of 0
+    reverseSplit = true;
 
     plugins = with pkgs; [
       {
@@ -30,12 +31,29 @@
 
     extraConfig = ''
       set -g mouse on 
+      set -sg escape-time 0
+
+      # reload config with prefix + r
+      bind r source-file ~/.config/tmux/tmux.conf \; display "Config reloaded!"
+
+      # split current window horizontally and vertically
+      bind _ split-window -v
+      bind - split-window -h
+
+      # pane evenly
+      bind | select-layout even-horizontal \; display "Even horizontal split!"
 
       # pane navigation
       bind -r h select-pane -L  # move left
       bind -r j select-pane -D  # move down
       bind -r k select-pane -U  # move up
       bind -r l select-pane -R  # move right
+
+      # pane resizing
+      bind -r H resize-pane -L 2
+      bind -r J resize-pane -D 2
+      bind -r K resize-pane -U 2
+      bind -r L resize-pane -R 2
 
       # window navigation
       unbind n
@@ -45,6 +63,22 @@
       bind -r C-S-H swap-window -t -1 \; select-window -t -1  # swap current window with the previous one
       bind -r C-S-L swap-window -t +1 \; select-window -t +1  # swap current window with the next one
       bind Tab last-window                                    # move to last active window
+
+      # sesh integration
+      bind-key "s" run-shell "sesh connect \"$(
+        sesh list --icons | fzf-tmux -p 80%,70% \
+          --no-sort --ansi --border-label ' sesh ' --prompt '⚡  ' \
+          --header '  ^a all ^t tmux ^g configs ^x zoxide ^d tmux kill ^f find' \
+          --bind 'tab:down,btab:up' \
+          --bind 'ctrl-a:change-prompt(⚡  )+reload(sesh list --icons)' \
+          --bind 'ctrl-t:change-prompt(🪟  )+reload(sesh list --icons -t)' \
+          --bind 'ctrl-g:change-prompt(⚙️  )+reload(sesh list --icons -c)' \
+          --bind 'ctrl-x:change-prompt(📁  )+reload(sesh list --icons -z)' \
+          --bind 'ctrl-f:change-prompt(🔎  )+reload(fd -H -d 2 -t d -E .Trash . ~)' \
+          --bind 'ctrl-d:execute(tmux kill-session -t {2..})+change-prompt(⚡  )+reload(sesh list --icons)' \
+          --preview-window 'right:55%' \
+          --preview 'sesh preview {}'
+      )\""
     '';
   };
 }

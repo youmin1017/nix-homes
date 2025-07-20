@@ -3,9 +3,8 @@
     sesh = {
       enable = true;
       enableAlias = true;
-      enableTmuxIntegration = true;
+      enableTmuxIntegration = false;
     };
-
     # sesh required settings
     fzf.tmux.enableShellIntegration = true;
   };
