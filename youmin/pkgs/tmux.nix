@@ -58,6 +58,7 @@
       # window navigation
       unbind n
       unbind p
+      bind d run -b "tmux rename-window \"#{b:pane_current_path}\"" # rename current window to CWD
       bind -r C-h previous-window                             # select previous window
       bind -r C-l next-window                                 # select next window
       bind -r C-S-H swap-window -t -1 \; select-window -t -1  # swap current window with the previous one
