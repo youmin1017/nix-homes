@@ -50,6 +50,7 @@
     go
     go-migrate
     nodejs_22
+    bun
     pnpm
     deno
     python312
