@@ -12,17 +12,16 @@
     enable = true;
     lfs.enable = true;
 
-    # TODO replace with your own name & email
     userName = "youmin1017";
     userEmail = "youmin.main@gmail.com";
 
-    includes = [
-      {
-        # use diffrent email & name for work
-        path = "~/Desktop/WKE/.gitconfig";
-        condition = "gitdir:~/Desktop/WKE/";
-      }
-    ];
+    # includes = [
+    #   {
+    #     # use diffrent email & name for work
+    #     path = "~/Desktop/WKE/.gitconfig";
+    #     condition = "gitdir:~/Desktop/WKE/";
+    #   }
+    # ];
 
     extraConfig = {
       init.defaultBranch = "main";
