@@ -31,7 +31,11 @@
 
     extraConfig = ''
       set -g mouse on 
-      set -sg escape-time 0
+      set -sg escape-time 10                    # faster command sequence
+      set -sg repeat-time 600                   # increase repeat timeout
+
+      # detach client
+      bind C-d detach \; display "Detached from session!"
 
       # reload config with prefix + r
       bind r source-file ~/.config/tmux/tmux.conf \; display "Config reloaded!"
@@ -61,8 +65,8 @@
       bind d run -b "tmux rename-window \"#{b:pane_current_path}\"" # rename current window to CWD
       bind -r C-h previous-window                             # select previous window
       bind -r C-l next-window                                 # select next window
-      bind -r C-S-H swap-window -t -1 \; select-window -t -1  # swap current window with the previous one
-      bind -r C-S-L swap-window -t +1 \; select-window -t +1  # swap current window with the next one
+      bind -r C-j swap-window -t -1 \; select-window -t -1  # swap current window with the previous one
+      bind -r C-k swap-window -t +1 \; select-window -t +1  # swap current window with the next one
       bind Tab last-window                                    # move to last active window
 
       # sesh integration
