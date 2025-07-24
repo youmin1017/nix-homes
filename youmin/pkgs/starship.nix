@@ -5,7 +5,7 @@
 
     enableBashIntegration = true;
     enableZshIntegration = true;
-    enableNushellIntegration = true;
+    enableNushellIntegration = false;
 
     settings = {
       container.disabled = true;

@@ -1,6 +1,5 @@
 {
   lib,
-  config,
   isDarwin,
   ...
 }:
@@ -41,8 +40,7 @@
     ];
 
     autocd = true;
-
-    enableCompletion = false;
+    enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
@@ -60,8 +58,7 @@
     k = "kubectl";
     cz = "chezmoi";
     lg = "lazygit";
-    rm = "trash";
-    # rm = lib.mkIf (isDarwin) "trash";
+    rm = if (isDarwin) then "trash" else "gtrash";
     ii = lib.mkIf (isDarwin) "open -a Finder.app";
     zed = lib.mkIf (!isDarwin) "zeditor";
 

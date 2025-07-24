@@ -4,10 +4,6 @@
   ...
 }:
 {
-  imports = [
-    ./pkgs
-  ];
-
   nixpkgs.overlays = [ outputs.overlays.default ];
 
   # Home Manager needs a bit of information about you and the paths it should
