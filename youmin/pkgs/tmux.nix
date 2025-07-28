@@ -6,18 +6,18 @@ let
       bash = "${pkgs.bash}/bin/bash";
     in
     # Author: https://hackmd.io/@DailyOops/persistent-tmux-popup
+    # Modified to use one floating session per main session.
     pkgs.writeScriptBin "tmux-popup" ''
       #!${pkgs.bash}/bin/bash
 
-      # Automatically fetch the current window ID and session name
-      window_id=$(${tmux} display-message -p '#I')
+      # Automatically fetch the current session name
       current_session_name=$(${tmux} display-message -p '#S')
 
       # Fetch the current directory of the parent session
       parent_session_dir=$(${tmux} display-message -p -F "#{pane_current_path}" -t0)
 
-      # Construct the unique session name with a "floating" suffix
-      session_name="floating_''${current_session_name}_''${window_id}"
+      # Construct the unique session name with a "floating" suffix, shared by all windows in the parent session
+      session_name="floating_''${current_session_name}"
 
       startup_command="$1"
 
@@ -36,7 +36,7 @@ let
                   switch_command="${tmux} select-window -t $(${tmux} display-message -p -F "#{window_index}" -t"$target_pane") ;"
               fi
           fi
-          ${tmux} popup -w 90% -h 80% -E "${bash} -c \"${tmux} attach -t $session_name; $switch_command\""  # Attach to the session in a popup
+          ${tmux} popup -w 90% -h 90% -E "${bash} -c \"${tmux} attach -t $session_name; $switch_command\""  # Attach to the session in a popup
       else
           if [ -z "$startup_command" ]; then
               # If no startup command is provided, just open a shell
