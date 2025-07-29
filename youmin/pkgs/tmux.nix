@@ -133,8 +133,15 @@ in
       bind -r C-k swap-window -t +1 \; select-window -t +1  # swap current window with the next one
       bind Tab last-window                                    # move to last active window
 
+      # choose window in current session
+      bind w display-popup -w 90% -h 90% -E \
+        "tmux list-windows -F '#{window_index}: #{window_name}' | \
+        fzf --ansi --reverse --preview 'tmux capture-pane -e -pt $(echo {} | cut -d: -f1)' --preview-window=right:70%:wrap | \
+        cut -d: -f1 | \
+        xargs tmux select-window -t"
+
       # sesh integration
-      bind-key "s" run-shell "sesh connect \"$(
+      bind s run-shell "sesh connect \"$(
         sesh list --icons | fzf-tmux -p 80%,70% \
           --no-sort --ansi --border-label ' sesh ' --prompt '⚡  ' \
           --header '  ^a all ^t tmux ^g configs ^x zoxide ^d tmux kill ^f find' \
