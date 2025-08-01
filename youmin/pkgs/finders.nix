@@ -8,6 +8,7 @@
       ignores = [
         ".git/"
         "*.bak"
+        "node_modules/"
       ];
     };
     fzf = {
