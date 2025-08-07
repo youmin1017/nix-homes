@@ -6,6 +6,13 @@ return {
   },
   ---@type snacks.Config
   opts = {
+    picker = {
+      sources = {
+        explorer = {
+          include = { ".env", "config.yaml" },
+        },
+      },
+    },
     dashboard = {
       preset = {
         pick = function(cmd, opts)
