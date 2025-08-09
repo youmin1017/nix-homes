@@ -1,3 +1,4 @@
+---@type LazySpec
 return {
   {
     "mason-org/mason.nvim",
@@ -31,6 +32,4 @@ return {
       },
     },
   },
-
-  { "flash.nvim", enabled = false },
 }
