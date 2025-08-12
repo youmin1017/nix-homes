@@ -51,13 +51,13 @@ map({ "n", "t" }, "<M-h>", function()
   })
 end, { desc = "Snacks bottom terminal" })
 map({ "n", "t" }, "<M-u>", function()
-  Snacks.terminal("gemini", {
+  Snacks.terminal("claude", {
     win = {
       border = "rounded",
       position = "float",
     },
   })
-end, { desc = "Snacks Gemini CLI" })
+end, { desc = "Snacks Claude Code" })
 
 -- Other
 -- stylua: ignore

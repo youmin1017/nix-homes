@@ -65,6 +65,7 @@
     kubernetes-helm
 
     # AI
+    claude-code
     gemini-cli
   ];
 
