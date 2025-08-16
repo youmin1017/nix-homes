@@ -24,6 +24,7 @@
     openssl
     mkcert
     gh
+    termscp
 
     # misc
     onefetch # Git repository summary generator

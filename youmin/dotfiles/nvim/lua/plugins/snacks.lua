@@ -6,6 +6,9 @@ return {
   },
   ---@type snacks.Config
   opts = {
+    bigfile = {
+      enabled = true,
+    },
     picker = {
       sources = {
         explorer = {
