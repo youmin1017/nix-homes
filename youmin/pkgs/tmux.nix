@@ -90,7 +90,11 @@ in
       set -wg mode-keys vi
       set -sg escape-time 10                    # faster command sequence
       set -sg repeat-time 400                   # increase repeat timeout
-      set -s copy-command ${if (isDarwin) then "pbcopy" else "wl-copy"}
+       
+      # clipboard integration
+      # set -s copy-command ${if (isDarwin) then "pbcopy" else "wl-copy"}
+      set -g set-clipboard on
+      set -g allow-passthrough on
 
       bind "'" if-shell "[[ $(tmux display-message -p '#S') = floating* ]]" {
           detach-client
