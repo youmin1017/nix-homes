@@ -16,6 +16,14 @@ return {
         },
       },
     },
+    notifier = {
+      filter = function(n)
+        if n.msg == "No information available" then
+          return false
+        end
+        return true
+      end,
+    },
     dashboard = {
       preset = {
         pick = function(cmd, opts)

@@ -9,6 +9,7 @@
         ".git/"
         "*.bak"
         "node_modules/"
+        "build/"
       ];
     };
     fzf = {
