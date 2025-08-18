@@ -46,7 +46,7 @@
     k = "kubectl";
     cz = "chezmoi";
     lg = "lazygit";
-    rm = if (isDarwin) then "trash" else "gtrash";
+    rm = lib.mkIf (isDarwin) "trash";
     ii = lib.mkIf (isDarwin) "open -a Finder.app";
     zed = lib.mkIf (!isDarwin) "zeditor";
 
