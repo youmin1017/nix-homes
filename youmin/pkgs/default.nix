@@ -25,6 +25,7 @@
     mkcert
     gh
     termscp
+    pwgen
 
     # misc
     onefetch # Git repository summary generator

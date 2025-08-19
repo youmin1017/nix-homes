@@ -1,4 +1,4 @@
-{ pkgs, isDarwin, ... }:
+{ pkgs, ... }:
 let
   tmuxPopup =
     let
@@ -90,9 +90,8 @@ in
       set -wg mode-keys vi
       set -sg escape-time 10                    # faster command sequence
       set -sg repeat-time 400                   # increase repeat timeout
+      set-option -g renumber-windows on         # renumber windows when a window is closed
        
-      # clipboard integration
-      # set -s copy-command ${if (isDarwin) then "pbcopy" else "wl-copy"}
       set -g set-clipboard on
       set -g allow-passthrough on
 
