@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, isDarwin, ... }:
 let
   tmuxPopup =
     let
@@ -92,8 +92,11 @@ in
       set -sg repeat-time 400                   # increase repeat timeout
       set-option -g renumber-windows on         # renumber windows when a window is closed
        
-      set -g set-clipboard on
+      set -s set-clipboard external
       set -g allow-passthrough on
+      set -s copy-command ${
+        if isDarwin then "pbcopy" else "wl-copy"
+      }  # use pbcopy on macOS, wl-copy on Linux
 
       bind "'" if-shell "[[ $(tmux display-message -p '#S') = floating* ]]" {
           detach-client
