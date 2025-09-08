@@ -36,19 +36,6 @@
     direnv
     lazygit
 
-    # lsp, formatter, linter for editors
-    # lsp
-    helm-ls
-    lua-language-server
-    marksman
-    nil
-    # formatter
-    kdlfmt
-    nixfmt-rfc-style
-    stylua
-    # linter
-    hadolint # Dockerfile linter
-
     # languages
     go
     go-migrate
@@ -68,7 +55,6 @@
 
     # AI
     claude-code
-    gemini-cli
   ];
 
   programs = {
