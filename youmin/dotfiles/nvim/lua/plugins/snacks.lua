@@ -16,6 +16,9 @@ return {
         },
       },
     },
+    explorer = {
+      enabled = false,
+    },
     notifier = {
       filter = function(n)
         if n.msg == "No information available" then
