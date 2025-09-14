@@ -12,7 +12,7 @@ return {
     picker = {
       sources = {
         explorer = {
-          include = { ".env", "config.yaml" },
+          include = { ".env*", "config.yaml" },
         },
       },
     },
