@@ -3,7 +3,7 @@ font-family = "DejaVuSansM Nerd Font Mono"
 font-size = 16
 window-height = 40
 window-width = 125
-window-decoration = auto
+window-decoration = none
 background-opacity = 0.9
 
 macos-option-as-alt = "left"
