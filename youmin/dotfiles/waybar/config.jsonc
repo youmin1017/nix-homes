@@ -31,7 +31,7 @@
     "bluetooth",
     "hyprland/language",
     "tray",
-    "custom/swaync",
+    // "custom/swaync",
     "clock",
     "custom/power"
   ],

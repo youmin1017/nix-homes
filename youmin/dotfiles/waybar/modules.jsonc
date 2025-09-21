@@ -1,6 +1,6 @@
 {
   "custom/arch": {
-    "format": "󰣇",
+    "format": "",
     "on-click": "wofi --show drun",
     "tooltip": true,
     "tooltip-format": "btw 😎"
@@ -124,7 +124,7 @@
       "󰤥",
       "󰤨"
     ],
-    "on-click-right": "kitty nmtui"
+    "on-click-right": "ghostty -e nmtui"
   },
   "network#speed": {
     "interval": 1,
@@ -150,7 +150,7 @@
   "cpu": {
     "format": "  {usage}%",
     "tooltip": true,
-    "on-click": "kitty htop &"
+    "on-click": "ghostty -e htop &"
   },
   "memory": {
     "format": "  {}%",
@@ -200,8 +200,8 @@
   },
   "custom/power": {
     "tooltip": true,
-    "on-click": "wlogout &",
-    "format": "",
+    "on-click": "/run/current-system/sw/bin/wlogout &",
+    "format": "⏻",
     "tooltip-format": "Power Menu"
   },
   "tray": {
@@ -216,7 +216,7 @@
     "tooltip-format-connected": "{device_enumerate}",
     "tooltip-format-enumerate-connected": " {device_alias} 󰂄{device_battery_percentage}%",
     "tooltip": true,
-    "on-click": "blueberry"
+    "on-click": "/run/current-system/sw/bin/blueberry"
   },
   "backlight": {
     "interval": 2,
