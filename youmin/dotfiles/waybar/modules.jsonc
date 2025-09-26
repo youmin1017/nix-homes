@@ -200,7 +200,7 @@
   },
   "custom/power": {
     "tooltip": true,
-    "on-click": "/run/current-system/sw/bin/wlogout &",
+    "on-click": "wlogout",
     "format": "⏻",
     "tooltip-format": "Power Menu"
   },
@@ -216,7 +216,7 @@
     "tooltip-format-connected": "{device_enumerate}",
     "tooltip-format-enumerate-connected": " {device_alias} 󰂄{device_battery_percentage}%",
     "tooltip": true,
-    "on-click": "/run/current-system/sw/bin/blueberry"
+    "on-click": "blueberry"
   },
   "backlight": {
     "interval": 2,
