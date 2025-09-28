@@ -1,9 +1,15 @@
+{ isDarwin, ... }:
+let
+  isLinux = !isDarwin;
+in
 {
   imports = [
     ./home.nix
     ./dotfiles
-    ./dconf.nix
     ./pkgs
-    ./services
+
+    # Linux specific
+    ./modules/dconf.nix
+    ./modules/hyprland.nix
   ];
 }
