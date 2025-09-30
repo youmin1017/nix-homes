@@ -1,5 +1,3 @@
-vim.lsp.enable("just")
-
 ---@type LazySpec
 return {
   {
@@ -7,7 +5,11 @@ return {
     opts = { ensure_installed = { "just" } },
   },
   {
-    "mason.nvim",
-    opts = { ensure_installed = { "just-lsp" } },
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        just = {},
+      },
+    },
   },
 }

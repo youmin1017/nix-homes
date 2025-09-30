@@ -1,7 +1,7 @@
 ---@type LazySpec
 return {
   {
-    "echasnovski/mini.surround",
+    "mini-nvim/mini.surround",
     version = false,
     enabled = false,
     keys = {

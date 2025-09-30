@@ -23,5 +23,6 @@
 
     # misc
     unzip # for mason.nvim
+    tree-sitter
   ];
 }
