@@ -17,6 +17,8 @@
     kdlfmt
     nixfmt-rfc-style
     stylua
+    biome
+    ruff
 
     # linter
     hadolint # Dockerfile linter

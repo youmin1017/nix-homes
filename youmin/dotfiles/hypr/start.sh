@@ -4,4 +4,4 @@
 swww img ~/.cache/wallpapers/Anime-Girl1.png &
 
 # Input method
-fcitx5 &
+fcitx5 -d

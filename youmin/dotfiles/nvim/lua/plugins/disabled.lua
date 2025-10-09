@@ -5,6 +5,7 @@ return {
     opts = function(_, opts)
       local remove = {
         stylua = true,
+        biome = true,
       }
       opts.ensure_installed = vim.tbl_filter(function(tool)
         return not remove[tool]
