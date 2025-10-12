@@ -1,8 +1,8 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   {
     "zbirenbaum/copilot.lua",
-    build = ":Copilot auth",
+    enabled = true,
     event = { "InsertEnter" },
     cmd = { "Copilot" },
     opts = {
@@ -21,6 +21,7 @@ return {
   },
   {
     "CopilotC-Nvim/CopilotChat.nvim",
+    enabled = false,
     opts = function()
       local user = vim.env.USER or "User"
       user = user:sub(1, 1):upper() .. user:sub(2)

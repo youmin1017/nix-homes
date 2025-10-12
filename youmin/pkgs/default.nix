@@ -55,6 +55,8 @@
 
     # AI
     claude-code
+    gemini-cli
+    github-copilot-cli
   ];
 
   programs = {

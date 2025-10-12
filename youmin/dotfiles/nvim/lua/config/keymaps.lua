@@ -50,14 +50,6 @@ map({ "n", "t" }, "<M-h>", function()
     },
   })
 end, { desc = "Snacks bottom terminal" })
-map({ "n", "t" }, "<M-u>", function()
-  Snacks.terminal("claude", {
-    win = {
-      border = "rounded",
-      position = "float",
-    },
-  })
-end, { desc = "Snacks Claude Code" })
 
 -- Other
 -- stylua: ignore
