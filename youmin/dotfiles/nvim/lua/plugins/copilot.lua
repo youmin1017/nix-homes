@@ -1,8 +1,12 @@
+local disabled = true
+if disabled then
+  return {}
+end
+
 ---@type LazySpec
 return {
   {
     "zbirenbaum/copilot.lua",
-    enabled = true,
     event = { "InsertEnter" },
     cmd = { "Copilot" },
     opts = {
@@ -21,7 +25,6 @@ return {
   },
   {
     "CopilotC-Nvim/CopilotChat.nvim",
-    enabled = false,
     opts = function()
       local user = vim.env.USER or "User"
       user = user:sub(1, 1):upper() .. user:sub(2)
