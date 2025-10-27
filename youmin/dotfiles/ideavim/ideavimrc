@@ -53,6 +53,11 @@ nmap ; :
 map gh g0
 map gl g$
 
+nmap <S-h> <Action>(PreviousTab)
+nmap <S-l> <Action>(NextTab)
+nmap <leader>bb <Action>(CloseEditor)
+nmap <leader>bo <Action>(CloseAllEditors)
+
 # Editor
 imap <C-a> <Action>(EditorLineStart)
 imap <C-e> <Action>(EditorLineEnd)

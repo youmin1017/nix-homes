@@ -23,9 +23,9 @@
     btop
     openssl
     mkcert
-    gh
     termscp
     pwgen
+    lsof
 
     # misc
     onefetch # Git repository summary generator
