@@ -1,4 +1,4 @@
-theme = "tokyonight"
+theme = TokyoNight
 font-family = "DejaVuSansM Nerd Font Mono"
 font-size = 16
 window-height = 40

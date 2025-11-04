@@ -86,7 +86,7 @@ in
     ];
 
     extraConfig = ''
-      set -g mouse on 
+      set -g mouse off
       set -wg mode-keys vi
       set -sg escape-time 10                    # faster command sequence
       set -sg repeat-time 400                   # increase repeat timeout
