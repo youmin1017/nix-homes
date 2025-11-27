@@ -1,10 +1,8 @@
+{ isDarwin, inputs, ... }:
 {
-  outputs,
-  isDarwin,
-  ...
-}:
-{
-  nixpkgs.overlays = [ outputs.overlays.default ];
+  nixpkgs.overlays = [
+    inputs.rust-overlay.overlays.default
+  ];
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
