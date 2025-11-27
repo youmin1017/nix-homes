@@ -13,6 +13,7 @@
     lua-language-server
     marksman
     nil
+    statix
 
     # formatter
     kdlfmt
